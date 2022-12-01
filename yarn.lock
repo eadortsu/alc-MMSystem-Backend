@@ -728,10 +728,10 @@
     webpack "5.74.0"
     webpack-node-externals "3.0.0"
 
-"@nestjs/common@^9.0.0":
-  version "9.2.0"
-  resolved "https://registry.npmjs.org/@nestjs/common/-/common-9.2.0.tgz"
-  integrity sha512-Ndcqak/ETYi+n1c5lFRPbxKLyUuM6DIOxcvfEFGfi0f6ad4dWDXRDx7z/n8V0l8+Y8djvvOHgf3t0e93w963Qg==
+"@nestjs/common@^9.2.1":
+  version "9.2.1"
+  resolved "https://registry.yarnpkg.com/@nestjs/common/-/common-9.2.1.tgz#24de19ee85a8f1747288980fe517b12753cf66ea"
+  integrity sha512-nZuo3oDsSSlC5mti/M2aCWTEIfHPGDXmBwWgPeCpRbrNz3IWd109rkajll+yxgidVjznAdBS9y00JkAVJblNYw==
   dependencies:
     iterare "1.2.1"
     tslib "2.4.1"
@@ -739,7 +739,7 @@
 
 "@nestjs/config@^2.2.0":
   version "2.2.0"
-  resolved "https://registry.npmjs.org/@nestjs/config/-/config-2.2.0.tgz"
+  resolved "https://registry.yarnpkg.com/@nestjs/config/-/config-2.2.0.tgz#9f3da35f7c4a58724c0a0817d6f04b66e6703430"
   integrity sha512-78Eg6oMbCy3D/YvqeiGBTOWei1Jwi3f2pSIZcZ1QxY67kYsJzTRTkwRT8Iv30DbK0sGKc1mcloDLD5UXgZAZtg==
   dependencies:
     dotenv "16.0.1"
@@ -762,7 +762,7 @@
 
 "@nestjs/jwt@^9.0.0":
   version "9.0.0"
-  resolved "https://registry.npmjs.org/@nestjs/jwt/-/jwt-9.0.0.tgz"
+  resolved "https://registry.yarnpkg.com/@nestjs/jwt/-/jwt-9.0.0.tgz#73e01338d2853a55033528b540cfd92c7996bae9"
   integrity sha512-ZsXGY/wMYKzEhymw2+dxiwrHTRKIKrGszx6r2EjQqNLypdXMQu0QrujwZJ8k3+XQV4snmuJwwNakQoA2ILfq8w==
   dependencies:
     "@types/jsonwebtoken" "8.5.8"
@@ -775,7 +775,7 @@
 
 "@nestjs/passport@^9.0.0":
   version "9.0.0"
-  resolved "https://registry.npmjs.org/@nestjs/passport/-/passport-9.0.0.tgz"
+  resolved "https://registry.yarnpkg.com/@nestjs/passport/-/passport-9.0.0.tgz#0571bb08f8043456bc6df44cd4f59ca5f10c9b9f"
   integrity sha512-Gnh8n1wzFPOLSS/94X1sUP4IRAoXTgG4odl7/AO5h+uwscEGXxJFercrZfqdAwkWhqkKWbsntM3j5mRy/6ZQDA==
 
 "@nestjs/platform-express@^9.0.0":
@@ -820,7 +820,7 @@
 
 "@nestjs/typeorm@^9.0.1":
   version "9.0.1"
-  resolved "https://registry.npmjs.org/@nestjs/typeorm/-/typeorm-9.0.1.tgz"
+  resolved "https://registry.yarnpkg.com/@nestjs/typeorm/-/typeorm-9.0.1.tgz#f78bfc00e71731ea860288e4a03830107daf3d9c"
   integrity sha512-A2BgLIPsMtmMI0bPKEf4bmzgFPsnvHqNBx3KkvaJ7hJrBQy0OqYOb+Rr06ifblKWDWS2tUPNrAFQbZjtk3PI+g==
   dependencies:
     uuid "8.3.2"
@@ -966,6 +966,11 @@
   integrity sha512-cdeYyv4KWoEgpBISTxWvqYsVy444DOqehiF3fM3ne10AmJ62RSyNkUnxMJXHQWRQQX2eR94m5y1IZyDwBjV9FQ==
   dependencies:
     "@types/node" "*"
+
+"@types/cookie@^0.5.1":
+  version "0.5.1"
+  resolved "https://registry.yarnpkg.com/@types/cookie/-/cookie-0.5.1.tgz#b29aa1f91a59f35e29ff8f7cb24faf1a3a750554"
+  integrity sha512-COUnqfB2+ckwXXSFInsFdOAWQzCCx+a5hq2ruyj+Vjund94RJQd4LG2u9hnvJrTgunKAaax7ancBYlDrNYxA0g==
 
 "@types/cookiejar@*":
   version "2.1.2"

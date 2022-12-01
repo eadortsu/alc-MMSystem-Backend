@@ -14,6 +14,8 @@ import { User, UserRoles } from '../users/entities/user.entity';
 import { SignupCredentialsDto } from './dto/signup-credentials.dto';
 import { MailService } from 'src/common/mail/mail.service';
 import { UpdatePasswordDto } from 'src/users/dto/update-password';
+import { ConfigService } from '@nestjs/config';
+import { ITokenPayload } from './interface/token-payload.interface';
 
 @Injectable()
 export class AuthService {
@@ -21,6 +23,7 @@ export class AuthService {
     private userService: UsersService,
     private mailService: MailService,
     private jwtService: JwtService,
+    private readonly configService: ConfigService,
   ) {}
 
   async login(
@@ -191,5 +194,13 @@ export class AuthService {
     };
 
     return this.jwtService.sign(payload);
+  }
+  public async getUserFromAuthenticationToken(token: string) {
+    const payload: ITokenPayload = this.jwtService.verify(token, {
+      secret: this.configService.get('JWT_ACCESS_TOKEN_SECRET'),
+    });
+    if (payload.id) {
+      return this.userService.findOne(payload.id);
+    }
   }
 }
