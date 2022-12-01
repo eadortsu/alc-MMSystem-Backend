@@ -20,14 +20,12 @@ export class PostEntity {
   body: string;
 
   @ManyToOne(() => User, (user: User) => user.posts, { nullable: true })
-
   @JoinColumn({ name: 'useID' })
   user: User;
 
   @OneToMany(() => CommentEntity, (Comment: CommentEntity) => Comment.post, {
     nullable: true,
   })
-
   comments: CommentEntity[];
   @CreateDateColumn()
   created_at: Date;

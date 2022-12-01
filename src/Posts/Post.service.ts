@@ -1,4 +1,4 @@
-import { Injectable, Param, Post } from '@nestjs/common';
+import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm/repository/Repository';
 import { CreatePostDto } from './dto/createpos.dto';
@@ -14,7 +14,7 @@ export class PostsService {
     //get all the posts
     return await this.postRepo.find();
   }
-  
+
   async findOnePost(id: any): Promise<PostEntity> {
     //get all the posts
     const post = this.postRepo.findOne({ where: id });

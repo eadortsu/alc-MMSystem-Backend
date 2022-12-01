@@ -90,14 +90,14 @@ export class User extends BaseEntity {
   password: string;
 
   @Column({ type: 'varchar', nullable: true })
-   @Exclude()
+  @Exclude()
   reset_code: string;
 
   @Column({ type: 'varchar', nullable: true })
-   @Exclude()
+  @Exclude()
   salt: string;
 
-   @OneToOne(() => UserDetail, (userDetails) => userDetails.user, {
+  @OneToOne(() => UserDetail, (userDetails) => userDetails.user, {
     cascade: true,
   })
   @JoinColumn()
