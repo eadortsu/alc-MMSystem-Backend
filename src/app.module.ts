@@ -15,6 +15,8 @@ import { CertificatesModule } from './certificates/certificates.module';
 import { PostsModule } from './Posts/Posts.module';
 import { CommentModule } from './Comments/Comments.module';
 import * as dotenv from 'dotenv';
+import { MessagesModule } from './Chat/messages/messages.module';
+import { InboxModule } from './Chat/inbox/inbox.module';
 dotenv.config();
 @Module({
   imports: [
@@ -43,6 +45,8 @@ dotenv.config();
     CertificatesModule,
     CommentModule,
     PostsModule,
+    MessagesModule,
+    InboxModule,
   ],
   controllers: [AppController],
   providers: [AppService],

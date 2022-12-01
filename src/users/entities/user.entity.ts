@@ -16,6 +16,8 @@ import { CommentEntity } from 'src/Comments/Comment.entity';
 import * as bcrypt from 'bcrypt';
 import { UserDetail } from '../../user-details/entities/user-detail.entity';
 import { Exclude } from 'class-transformer';
+import { messageEntity } from 'src/Chat/messages/entities/messageEntity.entity';
+import { InboxEntity } from 'src/Chat/inbox/entities/InboxEntity.entity';
 
 export enum UserRoles {
   Admin = 'admin',
@@ -138,4 +140,11 @@ export class User extends BaseEntity {
     const hash = await bcrypt.hash(password, this.salt);
     return hash === this.password;
   }
+  
+  @OneToMany(() => messageEntity, (message: messageEntity) => message.uSenderID)
+  messages: messageEntity[];
+  @OneToMany(() => InboxEntity, (inbox: InboxEntity) => inbox.uRecieverID)
+  inboxr: InboxEntity[];
+  @OneToMany(() => InboxEntity, (inbox: InboxEntity) => inbox.uSenderID)
+  inboxs: InboxEntity[];
 }
