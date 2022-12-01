@@ -1,12 +1,12 @@
 import { Injectable } from '@nestjs/common';
 import { AuthService } from '../../auth/auth.service';
 import { InjectRepository } from '@nestjs/typeorm';
-import { messageEntity } from './entities/messageEntity.entity';
 import { User } from '../../users/entities/user.entity';
 import { Repository } from 'typeorm';
-import { WsException} from '@nestjs/websockets';
+import { WsException } from '@nestjs/websockets';
 import { Socket } from 'socket.io';
 import { parse } from 'cookie';
+import { messageEntity } from './entities/messageEntity.entity';
 
 @Injectable()
 export class MessageService {
@@ -17,7 +17,7 @@ export class MessageService {
   ) {}
 
   async saveMessage(content: string, author: User) {
-    const newMessage = await this.messagesRepository.create({});
+    const newMessage = this.messagesRepository.create({});
     await this.messagesRepository.save(newMessage);
     return newMessage;
   }
@@ -30,12 +30,15 @@ export class MessageService {
   async getUserFromSocket(socket: Socket) {
     const cookie = socket.handshake.headers.cookie;
     const { Authentication: authenticationToken } = parse(cookie);
-    const user = await this.authenticationService.getUserFromAuthenticationToken(authenticationToken);
+    const user =
+      await this.authenticationService.getUserFromAuthenticationToken(
+        authenticationToken,
+      );
     if (!user) {
       throw new WsException('Invalid credentials.');
     }
     return user;
   }
-}
-  // ...
 
+  // ...
+}
